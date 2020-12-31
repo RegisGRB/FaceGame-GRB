@@ -1,0 +1,19 @@
+.FaceGameCountDown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    li{
+        text-align: center;
+        display: inline-block;
+        margin-right: 0.3rem;
+        width: 30vw;
+        span{
+            font-size: 1rem;
+        }
+        p{
+            font-size: 0.5rem;
+        }
+    }
+
+}
