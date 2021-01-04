@@ -9,5 +9,7 @@ module.exports = {
  Seconds:"Seconds",
  Milli:"Milli-Seconds",
  Level:"Level",
- Items:"Items"
+ Items:"Items",
+ Settings:"Settings",
+ Instructions:"FaceGame is a memory game in which images will appear on 2 boards it will therefore be necessary to find the image that will disappear from the top board in the bottom board"
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { helpers } from "../../../utils";
 import styled from "styled-components";
-import { StyledTheme } from "../../../components/StyledComponents";
+import { StyledTheme } from "../../StyledComponents";
 import { motion,AnimatePresence } from "framer-motion";
 
 

@@ -24,7 +24,6 @@ const FaceForm = ({ children, ...props }) => {
   };
   return (
     <div className="FaceFormContainre">
-      <StyledTitle absolute="true" top="45%" left="22%" cursor="pointer">FACEGAME</StyledTitle>
       <Form Fields={Fields} className="FaceForm" Action={Action} />
     </div>
   );

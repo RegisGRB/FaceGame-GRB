@@ -1,8 +1,9 @@
 import React from 'react';
-import MotionFade from "../../Motion/MotionFade";
+import MotionFade from "../../../Motion/MotionFade";
 import { motion } from "framer-motion";
-import { LangContext } from "../../../context";
-import StyledTheme from "../../StyledComponents/StyledTheme";
+import { LangContext } from "../../../../context";
+import StyledTheme from "../../../StyledComponents/StyledTheme";
+import "./FaceStats.scss"
 const FaceStats = ({level,item}) => {
     const LangContextx = React.useContext(LangContext);
     return (

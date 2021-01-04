@@ -1,7 +1,8 @@
 import React from 'react';
-import CountDown from "../../ui/CountDown/CountDown";
-import MotionFade from "../../Motion/MotionFade";
+import CountDown from "../../../ui/CountDown/CountDown";
+import MotionFade from "../../../Motion/MotionFade";
 import { motion } from "framer-motion";
+import "./FaceCountDown.scss"
 const FaceSettings = ({Fadecontroller,callback,CountdownTime,CountdownController}) => {
     return (
       <MotionFade controller={Fadecontroller} hidden={[10,0,0]}>

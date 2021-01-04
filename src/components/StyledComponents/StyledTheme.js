@@ -8,6 +8,9 @@ background-color: ${(props) => props.backgroundcolor ? props.theme.colors.backgr
 background-color: ${(props) => props.backgroundcolorinvert ? props.theme.colors.text : ""};
 border-color:${(props) => (props.bordercolor ? props.theme.colors.text : "")};
 
+filter:${(props) => (props.shadow ? `drop-shadow(2px 4px 6px ${props.theme.colors.text} )` : "")};
+filter:${(props) => (props.shadowinvert ? `drop-shadow(2px 4px 6px ${props.theme.colors.background} )` : "")};
+
 margin: ${(props) => (props.margin ? props.margin : "")};
 margin-right: ${(props) => (props.marginright ? props.margin : "")};
 margin-left: ${(props) => (props.marginleft ? props.margin : "")};
@@ -59,6 +62,8 @@ cursor: ${(props) => (props.cursor ? props.cursor : "")};
   font-size: ${(props) => (props.hoverfontSize ? props.hoverfontSize : "")};
   font-weight: ${(props) => (props.hoverfontweight ? props.hoverfontweight : "")};
   letter-spacing: ${(props) => (props.hoverletterSpacing ? props.hoverletterSpacing : "")};
+
+
 
   cursor: ${(props) => (props.hovercursor ? props.hovercursor : "")};
 }
