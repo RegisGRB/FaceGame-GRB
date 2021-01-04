@@ -1,10 +1,14 @@
 import React from "react";
-import { BrowserRouter , Route ,Switch,Redirect} from "react-router-dom";
+import { BrowserRouter , Route ,Switch} from "react-router-dom";
 import * as Pages from "../pages";
 import Header from "../components/header/header";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 const Router = () => {
 const routes = [
+    {
+    path: "/",
+    component: Pages.FaceGame,
+    },
     {
       path: "/Home",
       component: Pages.Home,
@@ -14,17 +18,13 @@ const routes = [
       component: Pages.SignIn,
     },
     {
-      path: "/Intro",
-      component: Pages.Intro,
-    },
-    {
       path: "/FaceGame",
       component: Pages.FaceGame,
     }
   ];
   return (
     <BrowserRouter>
-        <Header/>
+        {/* <Header/> */}
         <Route
           render={({ location }) => (
             <AnimatePresence exitBeforeEnter >

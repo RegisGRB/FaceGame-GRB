@@ -2,11 +2,6 @@
   font-family: police;
   src: url(./assets/font/MonumentExtended-Regular.otf);
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 
 $breakpoints: (
   "phone": 425px,
@@ -32,7 +27,9 @@ $breakpoints: (
 body,html{
   background-color: #171717;
 }
-
+a {
+  text-decoration: none; /* no underline */
+}
 .Black-theme{
 background-color: black;
 color: white;
@@ -87,19 +84,3 @@ height: 100%;
 }
 }
 
-html .main #content .title,
-body .main #content .title {
-  color: #bffcff;
-  letter-spacing: 5px;
-  text-shadow: 0px 0px 30px #bffcff;
-  font-family: "Quicksand", sans-serif;
-  font-size: 4rem;
-  text-transform: uppercase;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-}
-html .main #content .title span,
-body .main #content .title span {
-  font-size: 4rem;
-  cursor: pointer;
-}

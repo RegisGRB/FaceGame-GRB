@@ -3,7 +3,7 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-export default {
+ const ApiFetch ={
   Fetch: (url) => {
     return axios.post(url, { headers: headers });
   },
@@ -14,3 +14,4 @@ export default {
     localStorage.clear();
   },
 };
+export default ApiFetch;

@@ -2,7 +2,7 @@
 import React from "react";
 import {LangContext} from "../../context";
 import {ThemeContext} from "../../context";
-import StyledTheme from "../../components/StyledComponents/Styled";
+import {StyledTheme} from "../../components/StyledComponents";
 import styled from "styled-components";
 import { useIsPresent,motion } from "framer-motion"
 
@@ -35,7 +35,7 @@ const Pute =() =>{
   }, [isPresent])
   return (<StyledMenu as={motion.div}   
     initial={{ height: "100vh" }}
-    animate={{ height: 0,ease: "easeOut", duration: 4 }}
+    animate={{ height: "0",ease: "ease", duration: 4 }}
     exit={{ height: "100vh" }}
     ColorInvert BackgroundColorInvert>PUTE</StyledMenu>)
 }

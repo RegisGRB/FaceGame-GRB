@@ -1,0 +1,12 @@
+.InfiniteText {
+  animation: infiniteText 10s linear infinite;
+}
+
+@keyframes InfiniteText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}

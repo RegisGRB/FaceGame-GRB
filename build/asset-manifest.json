@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.044ad81c.chunk.css",
-    "main.js": "/static/js/main.b642daee.chunk.js",
-    "main.js.map": "/static/js/main.b642daee.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.69f1737c.js",
-    "runtime-main.js.map": "/static/js/runtime-main.69f1737c.js.map",
-    "static/js/2.a59d0013.chunk.js": "/static/js/2.a59d0013.chunk.js",
-    "static/js/2.a59d0013.chunk.js.map": "/static/js/2.a59d0013.chunk.js.map",
-    "static/js/3.bc48efc9.chunk.js": "/static/js/3.bc48efc9.chunk.js",
-    "static/js/3.bc48efc9.chunk.js.map": "/static/js/3.bc48efc9.chunk.js.map",
+    "main.css": "/static/css/main.dee0858e.chunk.css",
+    "main.js": "/static/js/main.8386f85e.chunk.js",
+    "main.js.map": "/static/js/main.8386f85e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5336d6a5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5336d6a5.js.map",
+    "static/js/2.78df4fd9.chunk.js": "/static/js/2.78df4fd9.chunk.js",
+    "static/js/2.78df4fd9.chunk.js.map": "/static/js/2.78df4fd9.chunk.js.map",
+    "static/js/3.9cd1427d.chunk.js": "/static/js/3.9cd1427d.chunk.js",
+    "static/js/3.9cd1427d.chunk.js.map": "/static/js/3.9cd1427d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f90c32f8071e945de0ef5a9956e6dd16.js": "/precache-manifest.f90c32f8071e945de0ef5a9956e6dd16.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.044ad81c.chunk.css.map": "/static/css/main.044ad81c.chunk.css.map",
-    "static/js/2.a59d0013.chunk.js.LICENSE.txt": "/static/js/2.a59d0013.chunk.js.LICENSE.txt",
-    "static/media/compressed-image.jpg": "/static/media/compressed-image.e42d6fce.jpg",
-    "static/media/yasmeen.webp": "/static/media/yasmeen.50f69859.webp"
+    "service-worker.js.map": "/service-worker.js.map",
+    "static/css/main.dee0858e.chunk.css.map": "/static/css/main.dee0858e.chunk.css.map",
+    "static/js/2.78df4fd9.chunk.js.LICENSE.txt": "/static/js/2.78df4fd9.chunk.js.LICENSE.txt",
+    "static/media/FaceGame.scss": "/static/media/9.4c6a1dca.jpeg",
+    "static/media/App.scss": "/static/media/MonumentExtended-Regular.db74f7a5.otf"
   },
   "entrypoints": [
-    "static/js/runtime-main.69f1737c.js",
-    "static/js/2.a59d0013.chunk.js",
-    "static/css/main.044ad81c.chunk.css",
-    "static/js/main.b642daee.chunk.js"
+    "static/js/runtime-main.5336d6a5.js",
+    "static/js/2.78df4fd9.chunk.js",
+    "static/css/main.dee0858e.chunk.css",
+    "static/js/main.8386f85e.chunk.js"
   ]
 }

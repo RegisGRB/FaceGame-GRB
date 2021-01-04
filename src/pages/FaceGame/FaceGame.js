@@ -1,50 +1,67 @@
 import React from "react";
-import StyledTheme from "../../components/StyledComponents/Styled";
-import styled from "styled-components";
-import { useIsPresent, motion } from "framer-motion";
 import "./FaceGame.scss";
-import CountDown from "../../components/CountDown/CountDown";
-const StyledMenu = styled(StyledTheme)`
-  height: 0px;
-  width: 100vw;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-`;
-const FaceGame = ({ children, ...props }) => {
-const [level,setlevel] = React.useState(1);
-const [item,setitem] = React.useState(3);
-const [timer,settimer] = React.useState(2);
-const maxitemx = 30;
-const [startAction,setstartAction] = React.useState(false);
-const [CountdownTime,setCountdownTime] = React.useState(2);
-  return (
-    <>
-      <div className="IntroContainer">
-        <div className="Title" onClick={()=> {setstartAction(true)}}>FACEGAME</div>
-            <CountDown minutes seconds millisec startAction={startAction} CountdownTime={CountdownTime} callback={()=>alert("pokemon")} className="FaceGameCountDown"></CountDown>
-      </div>
-      <Pute></Pute>
-    </>
-  );
-};
-const Pute = () => {
-  const isPresent = useIsPresent();
+import FaceGrid from "../../components/FaceGrid/FaceGrid";
+import {helpers} from "../../utils";
+import FaceInfo from "../../components/FaceInfo/FaceInfo";
 
-  React.useEffect(() => {
-    !isPresent && console.log("I've been removed!");
-  }, [isPresent]);
+
+const FaceGame = ({ children, ...props }) => {
+  const [level, setlevel] = React.useState(1);
+  const [item, setitem] = React.useState(4);
+  const maxItems = 29;
+  const [CountdownTime, setCountdownTime] = React.useState(1);
+  const [CountdownAdd, setCountdownAdd] = React.useState(0.2);
+  const [ImageType, setImageType] = React.useState("x");
+  const [fakeElement,setfakeElement] = React.useState(null);
+  const refHideElement = React.useRef(null);
+
+const ShowSus = React.useCallback(() =>{
+  console.log(refHideElement);
+  refHideElement.current.id="sus";
+},[refHideElement]);
+
+const StartGame = ()=>{
+  setlevel(1);
+  setitem(4);
+  setCountdownTime(1);
+  setfakeElement(GetFakeElement())
+}
+const GetFakeElement = React.useCallback(() =>{
+  let x;
+  do {
+  x = helpers.getrandomInt(maxItems);
+} while (x===fakeElement);
+return x;
+},[fakeElement,maxItems]);
+const Settings = (item,CountdownTime,CountdownAdd) =>{
+  setitem(item);
+  setCountdownAdd(CountdownTime);
+  setCountdownTime(CountdownTime);
+}
+const WinAction = React.useCallback(()=>{
+  if(refHideElement.current.id==="sus"){
+    if(item===maxItems){
+      alert("YOU BEAT FACEGAME");
+      setfakeElement(null);
+    }else{
+      setlevel(level+1);
+      setitem(item+1);
+      setCountdownTime(Number((Math.round((CountdownTime+CountdownAdd) * 100)/100).toFixed(2)));
+      setfakeElement(GetFakeElement());
+    }
+  }
+},[level,item,CountdownTime,CountdownAdd,refHideElement,maxItems]);
+const loseAction = () =>{
+  if(refHideElement.current.id==="sus"){
+  setfakeElement(null);
+  }
+}
   return (
-    <StyledMenu
-      as={motion.div}
-      initial={{ height: "100vh" }}
-      animate={{ height: 0 }}
-      exit={{ height: "100vh" }}
-      ColorInvert
-      BackgroundColorInvert
-    >
-      PUTE
-    </StyledMenu>
+      <div className="FaceContainer">
+        <FaceGrid item={item}  maxItems={maxItems} fakeElement={fakeElement} WinAction={WinAction} loseAction={loseAction} refHideElement={refHideElement} ImageType={ImageType}></FaceGrid>
+        <FaceInfo level={level} item={item} fakeElement={fakeElement} CountdownTime={CountdownTime} ShowSus={ShowSus} StartGame={StartGame}></FaceInfo>
+      </div>
   );
 };
+
 export default FaceGame;

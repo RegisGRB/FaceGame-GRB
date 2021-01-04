@@ -1,4 +1,4 @@
-const Config = {
+ const Config = {
     breakpoints: {
       sm: "640px",
       md: "768px",
@@ -6,3 +6,4 @@ const Config = {
       xl: "1280px"
     },
   };
+  export default Config;
