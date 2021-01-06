@@ -1,4 +1,7 @@
 // CONTAINER
+body,html{
+  overflow: hidden;
+}
 .FaceContainer {
   display: flex;
   width: 100%;

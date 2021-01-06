@@ -18,10 +18,10 @@ const ThemeContextx = React.useContext(ThemeContext);
   return (
     <>
     <div className="container testSelector">
-       <StyledTheme fontcolor="true" className="BIG" onClick={()=>ThemeContextx.updateTheme("Black")} >{LangContextx.Black}</StyledTheme>
-       <StyledTheme fontcolor="true" className="BIG" onClick={()=>ThemeContextx.updateTheme("White")} >{LangContextx.White}</StyledTheme>
-       <StyledTheme fontcolor="true" className="BIG" onClick={()=>LangContextx.updateTranslation("en")} >EN</StyledTheme>
-       <StyledTheme fontcolor="true" className="BIG" onClick={()=>LangContextx.updateTranslation("fr")} >FR</StyledTheme>
+       <StyledTheme  className="BIG" onClick={()=>ThemeContextx.updateTheme("Black")} >{LangContextx.Black}</StyledTheme>
+       <StyledTheme  className="BIG" onClick={()=>ThemeContextx.updateTheme("White")} >{LangContextx.White}</StyledTheme>
+       <StyledTheme  className="BIG" onClick={()=>LangContextx.updateTranslation("en")} >EN</StyledTheme>
+       <StyledTheme  className="BIG" onClick={()=>LangContextx.updateTranslation("fr")} >FR</StyledTheme>
        </div>
        <Pute></Pute>
     </>

@@ -1,6 +1,9 @@
 module.exports = {
+ mode:"en",
  HomeTitle:"Hi",
  Black:"Black",
+ Theme:"Theme",
+ Language:"Language",
  White:"White",
  Year:"Year",
  Days:"Days",

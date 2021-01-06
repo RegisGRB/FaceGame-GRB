@@ -9,10 +9,10 @@ const FaceStats = ({level,item}) => {
     return (
         <MotionFade controller={localStorage.getItem("User") ? null : "hidden"} hidden={[10,0,0]} >
         <motion.div className="FaceGameInfo">
-          <StyledTheme as="li" fontcolor="true">
+          <StyledTheme as="li">
             <span>{level}</span> <p>{LangContextx.Level}</p>
           </StyledTheme>
-          <StyledTheme as="li" fontcolor="true">
+          <StyledTheme as="li" >
             <span>{item}</span> <p>{LangContextx.Items}</p>
           </StyledTheme>
         </motion.div>

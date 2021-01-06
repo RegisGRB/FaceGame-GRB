@@ -16,7 +16,7 @@ const [openSettings,setopenSettings] = React.useState(false);
       </MotionFade>
         <MotionModal controller={openSettings} hidden={ModalContentAnimation} duration={ModalContentduration}>
             {ModalContent}
-            <StyledTheme as={GrClose} strokecolorinvert="true" onClick={()=>setopenSettings(false)} cursor="pointer" absolute="true" top="10%" right="10%" ></StyledTheme>
+            <StyledTheme as={GrClose} strokecolor="true" onClick={()=>setopenSettings(false)} cursor="pointer" absolute="true" top="10%" right="10%" ></StyledTheme>
         </MotionModal>
     </>
     );

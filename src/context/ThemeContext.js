@@ -5,7 +5,6 @@ const ThemeContext = React.createContext();
 
 const ThemeProviderContext = ({ children, ThemeSelected = "Black" }) => {
   const [Theme, setTheme] = useState(ThemeJson[ThemeSelected]);
-
   const updateTheme = (ThemeSelected) => {
     if (ThemeJson[ThemeSelected]) {
       setTheme(ThemeJson[ThemeSelected]);
@@ -13,18 +12,12 @@ const ThemeProviderContext = ({ children, ThemeSelected = "Black" }) => {
       throw new Error("this Theme doesn't exist");
     }
   };
-  const GlobalStyle = createGlobalStyle`
-  body,html {
-    background-color: ${Theme.colors.background};
-    color: ${Theme.colors.text}; 
-    transition:all 1s;
-  }
-`;
+
   return (
     <ThemeContext.Provider value={{ ...Theme, updateTheme }}>
-      <GlobalStyle/>
       <ThemeProvider theme={Theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 };
+
 export { ThemeProviderContext, ThemeContext as default };

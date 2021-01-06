@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import * as TranslationJson from "../translations";
 
 const LangContext = React.createContext();
-const LangProvider = ({ children, Lang = "en" }) => {
-  const [Translation, setTranslation] = useState(TranslationJson[Lang]);
+const LangProvider = ({ children, LangSelected = "en" }) => {
+  const [Translation, setTranslation] = useState(TranslationJson[LangSelected]);
   const updateTranslation = (x) => {
     if (TranslationJson[x]) {
       setTranslation(TranslationJson[x]);
@@ -11,10 +11,12 @@ const LangProvider = ({ children, Lang = "en" }) => {
       throw new Error("this langage doesn't exist");
     }
   };
-
+  const getTranslation = () => {
+   return LangSelected;
+  };
 
   return (
-    <LangContext.Provider value={{ ...Translation, updateTranslation }}>
+    <LangContext.Provider value={{ ...Translation, updateTranslation,getTranslation }}>
       {children}
     </LangContext.Provider>
   );

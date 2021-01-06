@@ -1,10 +1,17 @@
 import React from "react";
-import {StyledTheme} from "../../StyledComponents";
+import { StyledTheme } from "../../StyledComponents";
 import styled from "styled-components";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-
-const Form = ({ UrlAPI, Fields, Action, Redirect, className="GrbForm", props }) => {
+import { helpers } from "../../../utils";
+const Form = ({
+  UrlAPI,
+  Fields,
+  Action,
+  Redirect,
+  className = "GrbForm",
+  props,
+}) => {
   const history = useHistory();
   const [FormState, SetFormState] = React.useState(Fields);
   const submit = (e) => {
@@ -12,6 +19,7 @@ const Form = ({ UrlAPI, Fields, Action, Redirect, className="GrbForm", props }) 
     if (UrlAPI) {
       APICALL();
     } else {
+      console.log(FormState);
       Action(FormState);
       history.push(Redirect);
     }
@@ -27,48 +35,65 @@ const Form = ({ UrlAPI, Fields, Action, Redirect, className="GrbForm", props }) 
         Action(res);
         history.push(Redirect);
       })
-      .catch((err) => {console.log(err)});
+      .catch((err) => {
+        console.log(err);
+      });
   };
-
+React.useEffect(()=>{
+  SetFormState(Fields);
+},[Fields])
   const FormGenerator = () => {
     const elements = [];
     for (let field in FormState) {
       elements.push(
-        // <>
-        //   {FormState[field].label ? (
-        //     <label for={FormState[field].name}  key={field+"Label"}>{FormState[field].label}</label>
-        //   ) : (
-        //     ""
-        //   )}
+        <div
+          className={`inputFields ${
+            FormState[field].type === "submit" ? "SubmitButton" : ""
+          }`}
+          key={helpers.generateKey(field)}
+        >
           <StyledInput
             checked={FormState[field].checked}
             name={FormState[field].name}
             as={FormState[field].as ? FormState[field].as : "input"}
             type={FormState[field].type}
-            pattern={`.{${FormState[field].minlength ? FormState[field].minlength : 0},${FormState[field].maxlength ? FormState[field].maxlength: ""}}`}
+            id={field}
+            pattern={`.{${
+              FormState[field].minlength ? FormState[field].minlength : 0
+            },${FormState[field].maxlength ? FormState[field].maxlength : ""}}`}
             size={FormState[field].size}
             placeholder={FormState[field].placeholder}
             fontcolorinvert="true"
-            key={field}
             backgroundcolorinvert="true"
             required={FormState[field].required}
             value={FormState[field].value}
-            onChange={(e) =>
+            onChange={(e) => {
               SetFormState({
                 ...FormState,
                 [field]: { ...FormState[field], value: e.target.value },
-              })
-            }
+              });
+              if(FormState[field].Change)
+              FormState[field].Change(FormState[field].value);
+            }}
+            onClick={(e) => {
+              if(FormState[field].Change)
+              FormState[field].Change(FormState[field].value);
+            }}
           ></StyledInput>
-        // </>
+          {FormState[field].label ? (
+            <label htmlFor={field}>{FormState[field].label}</label>
+          ) : (
+            ""
+          )}
+        </div>
       );
     }
     return elements;
   };
   return (
-      <StyledForm onSubmit={submit} className={className}>
-        {FormGenerator()}
-      </StyledForm>
+    <StyledForm onSubmit={submit} className={className}>
+      {FormGenerator()}
+    </StyledForm>
   );
 };
 const StyledForm = styled.form``;
@@ -76,7 +101,7 @@ const StyledInput = styled(StyledTheme)``;
 
 export default Form;
 // fields exemple
-// const Fields = 
+// const Fields =
 //     {
 //      UserName:{
 //         type: "text",

@@ -14,7 +14,7 @@
         return array;
       },
      generateKey : (prefixer) => {
-       console.log( `${ prefixer }_${ new Date().getTime() }`);
+      //  console.log( `${ prefixer }_${ new Date().getTime() }`);
         return `${ prefixer }_${ new Date().getTime() }`;
     }
   };

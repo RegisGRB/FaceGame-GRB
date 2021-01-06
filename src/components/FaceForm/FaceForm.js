@@ -18,9 +18,7 @@ const Fields = {
 
 const FaceForm = ({ children, ...props }) => {
   const Action = (data) => {
-      console.log(localStorage.getItem("User"));
     localStorage.setItem("User", data.Pseudo.value);
-    alert("ezfz");
   };
   return (
     <div className="FaceFormContainre">

@@ -8,7 +8,7 @@ const MotionModal = ({ controller, children ,hidden=["100vh",0,1],duration=1.6})
 
   return (
     <MotionFade controller={controller} exitbeforeenter={true} show={[0,0,1]} hidden={hidden} duration={duration}>
-      <StyledModal as={motion.div} backgroundcolorinvert="true" >
+      <StyledModal as={motion.div} backgroundcolor="true" >
         {children}
       </StyledModal>
     </MotionFade>
@@ -23,9 +23,6 @@ top:0;
 left:0;
 width:100vw;
 height:100vh;
-display: flex;
-justify-content: center;
-align-items: center;
 z-index:9999
 `;
 

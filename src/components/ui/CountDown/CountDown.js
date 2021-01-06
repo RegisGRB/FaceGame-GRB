@@ -74,12 +74,12 @@ const CountDown = ({years,days,hours,minutes,seconds, millisec,className,label=t
     }
     return (
       <ul className={className}>
-        {years ? <StyledTheme as="li" fontcolor="true"><span>{timeLeft.years }</span>{label ? <p>{LangContextx.Year}</p>: ""}</StyledTheme> : ""}
-        {days ? <StyledTheme as="li" fontcolor="true"><span>{timeLeft.days  }</span>{label ? <p>{LangContextx.Days}</p>: ""}</StyledTheme> : ""}
-        {hours ? <StyledTheme as="li" fontcolor="true"><span>{ timeLeft.hours }</span>{label ? <p>{LangContextx.Hours}</p>: ""}</StyledTheme> : ""}
-        {minutes ? <StyledTheme as="li" fontcolor="true"><span>{ timeLeft.min  }</span>{label ? <p>{LangContextx.Minutes}</p>: ""}</StyledTheme> : ""}
-        {seconds ? <StyledTheme as="li" fontcolor="true"><span>{timeLeft.sec }</span>{label ? <p>{LangContextx.Seconds}</p>: ""}</StyledTheme> : ""}
-        {millisec ? <StyledTheme as="li" fontcolor="true"><span>{timeLeft.millisec  }</span>{label ? <p>{LangContextx.Milli}</p>: ""}</StyledTheme> : ""}
+        {years ? <StyledTheme as="li" ><span>{timeLeft.years }</span>{label ? <p>{LangContextx.Year}</p>: ""}</StyledTheme> : ""}
+        {days ? <StyledTheme as="li" ><span>{timeLeft.days  }</span>{label ? <p>{LangContextx.Days}</p>: ""}</StyledTheme> : ""}
+        {hours ? <StyledTheme as="li" ><span>{ timeLeft.hours }</span>{label ? <p>{LangContextx.Hours}</p>: ""}</StyledTheme> : ""}
+        {minutes ? <StyledTheme as="li" ><span>{ timeLeft.min  }</span>{label ? <p>{LangContextx.Minutes}</p>: ""}</StyledTheme> : ""}
+        {seconds ? <StyledTheme as="li" ><span>{timeLeft.sec }</span>{label ? <p>{LangContextx.Seconds}</p>: ""}</StyledTheme> : ""}
+        {millisec ? <StyledTheme as="li" ><span>{timeLeft.millisec  }</span>{label ? <p>{LangContextx.Milli}</p>: ""}</StyledTheme> : ""}
       </ul>
     );
   };

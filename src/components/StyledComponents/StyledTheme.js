@@ -12,10 +12,10 @@ filter:${(props) => (props.shadow ? `drop-shadow(2px 4px 6px ${props.theme.color
 filter:${(props) => (props.shadowinvert ? `drop-shadow(2px 4px 6px ${props.theme.colors.background} )` : "")};
 
 margin: ${(props) => (props.margin ? props.margin : "")};
-margin-right: ${(props) => (props.marginright ? props.margin : "")};
-margin-left: ${(props) => (props.marginleft ? props.margin : "")};
-margin-top: ${(props) => (props.margintop ? props.margin : "")};
-margin-bottom: ${(props) => (props.marginbottom ? props.margin : "")};
+margin-right: ${(props) => (props.marginright ? props.marginright : "")};
+margin-left: ${(props) => (props.marginleft ? props.marginleft : "")};
+margin-top: ${(props) => (props.margintop ? props.margintop : "")};
+margin-bottom: ${(props) => (props.marginbottom ? props.marginbottom : "")};
 
 padding: ${(props) => (props.padding ? props.padding : "")};
 padding-right: ${(props) => (props.paddingright ? props.paddingright : "")};
@@ -36,6 +36,7 @@ font-size: ${(props) => (props.fontSize ? props.fontSize : "")};
 font-weight: ${(props) => (props.fontweight ? props.fontweight : "")};
 letter-spacing: ${(props) => (props.letterSpacing ? props.letterSpacing : "")};
 
+opacity: ${(props) => (props.opacity ? props.opacity : "")};
 cursor: ${(props) => (props.cursor ? props.cursor : "")};
 &:hover {
   color:  ${(props) => (props.hoverfontcolor ? props.theme.colors.background : "")};
