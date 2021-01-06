@@ -40,7 +40,6 @@ const [fielx,setfielx] = React.useState([])
 const GetFields= () =>{
   let field = []
   for(let x in Mode){
-    console.log(x,ModeSelected);
     field[x] =  {
       checked: ModeSelected === x ? true : false,
       name:"Radio",
@@ -51,12 +50,11 @@ const GetFields= () =>{
       Change:setSettings
     }
   }
-  console.log(field);
   setfielx(field);
 }
 React.useEffect(()=>{
  GetFields(); 
-},[ModeSelected,setSettings]);
+},[ModeSelected]);
   return (
     <div className="ModalSettings">
       <div className="defaultFields">

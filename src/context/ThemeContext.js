@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as ThemeJson from "../Theme";
-import { ThemeProvider,createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "styled-components";
 const ThemeContext = React.createContext();
 
 const ThemeProviderContext = ({ children, ThemeSelected = "Black" }) => {

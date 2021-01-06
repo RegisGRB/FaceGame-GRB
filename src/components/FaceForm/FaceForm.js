@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "../ui/Form/Form";
 import "./FaceForm.scss"
-import { StyledTitle } from "../../components/StyledComponents";
 const Fields = {
   Pseudo: {
     type: "text",

@@ -59,7 +59,7 @@ const FaceGame = ({ children, ...props }) => {
         setfakeElement(GetFakeElement());
       }
     }
-  }, [level, item, CountdownTime, CountdownAdd, refHideElement, maxItems]);
+  }, [level, item, CountdownTime, CountdownAdd, refHideElement, maxItems,itemAdd,GetFakeElement]);
 
   const loseAction = () => {
     if (refHideElement.current.id === "sus") {

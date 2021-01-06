@@ -2,7 +2,6 @@ import React from "react";
 import { helpers } from "../../../utils";
 import styled from "styled-components";
 import { StyledTheme } from "../../StyledComponents";
-import { motion, AnimatePresence } from "framer-motion";
 
 const FaceFill = ({
   item,
@@ -72,6 +71,7 @@ const FaceFill = ({
     maxItems,
     className,
     ImageType,
+    item
   ]);
 
   return (
@@ -99,16 +99,5 @@ const StyledImg = styled(StyledTheme)`
     background-color: ${(props) => props.theme.colors.text};
   }
 `;
-const letter = {
-  initial: {
-    x: 1000,
-  },
-  animate: {
-    x: 0,
-  },
-  exit: {
-    x: -1000,
-    transition: { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] },
-  },
-};
+
 export default FaceFill;
