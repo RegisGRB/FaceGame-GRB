@@ -12,7 +12,7 @@ const PwaInstall = ({className}) => {
       setPromptInstall(e);
     };
     window.addEventListener("beforeinstallprompt", handler);
-      
+
     return () => window.removeEventListener("transitionend", handler);
   }, []);
  
@@ -23,7 +23,7 @@ const PwaInstall = ({className}) => {
     }
     promptInstall.prompt();
   };
-  if (!window.matchMedia('(display-mode: standalone)').matches) {
+  if (!((window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://'))) {
     return null;
   }
   return (
