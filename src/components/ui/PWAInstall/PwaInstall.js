@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { LangContext } from "../../../context";
 const PwaInstall = ({ className }) => {
   const LangContextx = React.useContext(LangContext);
-  const [supportsPWA, setSupportsPWA] = useState(isInStandaloneMode());
+  const [supportsPWA, setSupportsPWA] = useState((window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone ));
   const [promptInstall, setPromptInstall] = useState(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const PwaInstall = ({ className }) => {
 
   return (
     <>
-      {!supportsPWA && (
+      {supportsPWA && (
         <button
           id="PWA-button"
           aria-label={LangContextx.PWAInstall}
@@ -41,11 +41,5 @@ const PwaInstall = ({ className }) => {
     </>
   );
 };
-const isInStandaloneMode = () => {
-  return (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone ||
-    document.referrer.includes("android-app://")
-  );
-};
+
 export default PwaInstall;
