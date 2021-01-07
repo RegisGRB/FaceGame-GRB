@@ -23,11 +23,10 @@ const PwaInstall = ({className}) => {
     }
     promptInstall.prompt();
   };
-  if ((window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://')) {
-    return null;
-  }
   return (
-    <button
+    <>{
+      ((window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://')) && (
+      <button
       id="PWA-button"
       aria-label={LangContextx.PWAInstall}
       title={LangContextx.PWAInstall}
@@ -35,6 +34,9 @@ const PwaInstall = ({className}) => {
     >
       {LangContextx.PWAInstall}
     </button>
+      )
+    }
+    </>
   );
 };
 
