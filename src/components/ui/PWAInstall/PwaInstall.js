@@ -3,18 +3,18 @@ import React, { useEffect, useState } from "react";
 import { LangContext } from "../../../context";
 const PwaInstall = ({className}) => {
     const LangContextx = React.useContext(LangContext);
-  const [supportsPWA, setSupportsPWA] = useState(isInStandaloneMode());
+  const [supportsPWA, setSupportsPWA] = useState(window.matchMedia('(display-mode: standalone)').matches);
   const [promptInstall, setPromptInstall] = useState(null);
 
   useEffect(() => {
     const handler = e => {
       e.preventDefault();
       console.log("we are being triggered :D");
-      setSupportsPWA(true);
+      setSupportsPWA(window.matchMedia('(display-mode: standalone)').matches);
       setPromptInstall(e);
     };
     window.addEventListener("beforeinstallprompt", handler);
-
+      
     return () => window.removeEventListener("transitionend", handler);
   }, []);
  
@@ -39,7 +39,5 @@ const PwaInstall = ({className}) => {
     </button>
   );
 };
-const isInStandaloneMode = () =>{
-  return (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://');
-  }
+
 export default PwaInstall;
