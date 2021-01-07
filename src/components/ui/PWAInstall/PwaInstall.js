@@ -10,11 +10,11 @@ const PwaInstall = ({ className }) => {
     const handler = (e) => {
       e.preventDefault();
       console.log("we are being triggered :D");
-      setSupportsPWA(true);
+      setSupportsPWA(false);
       setPromptInstall(e);
     };
     window.addEventListener("beforeinstallprompt", handler);
-
+    window.addEventListener('appinstalled', (evt) => {setSupportsPWA(false)});
     return () => window.removeEventListener("transitionend", handler);
   }, []);
 
