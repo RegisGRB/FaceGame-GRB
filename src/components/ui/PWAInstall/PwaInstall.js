@@ -17,9 +17,7 @@ const PwaInstall = ({className}) => {
 
     return () => window.removeEventListener("transitionend", handler);
   }, []);
-  const isInStandaloneMode = () =>{
-  return (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://');
-  }
+ 
   const onClick = evt => {
     evt.preventDefault();
     if (!promptInstall) {
@@ -41,5 +39,7 @@ const PwaInstall = ({className}) => {
     </button>
   );
 };
-
+const isInStandaloneMode = () =>{
+  return (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://');
+  }
 export default PwaInstall;
