@@ -19,7 +19,7 @@ const FaceInfo = ({
 }) => {
   return (
     <>
-      <FaceBranding Fadecontroller={fakeElement} Highscore={Highscore}></FaceBranding>
+      <FaceBranding Fadecontroller={fakeElement} Highscore={Highscore} ModeSelected={ModeSelected} item={item}></FaceBranding>
       <FaceModalSettings Fadecontroller={fakeElement} setSettings={setSettings} ModeSelected={ModeSelected} />
       <div className="UserController">
         <FaceStart Fadecontroller={fakeElement} action={StartGame} txt="Start" className="StartTrigger"/>
