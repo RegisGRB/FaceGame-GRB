@@ -6,23 +6,15 @@ const PwaInstall = ({ className }) => {
   const [supportsPWA, setSupportsPWA] = useState(!(window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone || document.referrer.includes("android-app://")));
   const [promptInstall, setPromptInstall] = useState(null);
 
-  useEffect(() => {
-    const handler = (e) => {
-      e.preventDefault();
-      console.log("we are being triggered :D");
-      setSupportsPWA(false);
-      setPromptInstall(e);
-    };
-    window.addEventListener("beforeinstallprompt", handler);
-    return () => window.removeEventListener("transitionend", handler);
-  }, []);
-
   const onClick = (evt) => {
     evt.preventDefault();
+    console.log("we are being triggered :D");
     if (!promptInstall) {
       return;
     }
     promptInstall.prompt();
+    setSupportsPWA(false);
+    setPromptInstall(evt);
   };
 
   return (
