@@ -3,14 +3,12 @@ import React, { useEffect, useState } from "react";
 import { LangContext } from "../../../context";
 const PwaInstall = ({className}) => {
     const LangContextx = React.useContext(LangContext);
-  const [supportsPWA, setSupportsPWA] = useState(window.matchMedia('(display-mode: standalone)').matches);
   const [promptInstall, setPromptInstall] = useState(null);
 
   useEffect(() => {
     const handler = e => {
       e.preventDefault();
       console.log("we are being triggered :D");
-      setSupportsPWA(window.matchMedia('(display-mode: standalone)').matches);
       setPromptInstall(e);
     };
     window.addEventListener("beforeinstallprompt", handler);
@@ -25,7 +23,7 @@ const PwaInstall = ({className}) => {
     }
     promptInstall.prompt();
   };
-  if (!supportsPWA) {
+  if (!window.matchMedia('(display-mode: standalone)').matches) {
     return null;
   }
   return (
