@@ -12,7 +12,7 @@ const FaceBranding = ({ Fadecontroller, Highscore }) => {
           <span>GRB-GAME 2019 | {new Date().getFullYear()}</span>
         </StyledTheme>
         <div className="Highscore">
-          {Highscore !== "" && (
+          {Highscore !== [] && (
             <>
               <StyledTheme fontSize="3rem">SCORE</StyledTheme>
               <StyledTheme fontSize="3rem">

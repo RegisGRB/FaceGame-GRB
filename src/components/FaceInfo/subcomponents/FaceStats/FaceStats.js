@@ -7,7 +7,7 @@ import "./FaceStats.scss"
 const FaceStats = ({level,item}) => {
     const LangContextx = React.useContext(LangContext);
     return (
-        <MotionFade controller={localStorage.getItem("User") ? null : "hidden"} hidden={[10,0,0]} >
+        <MotionFade controller={null} hidden={[10,0,0]} >
         <motion.div className="FaceGameInfo">
           <StyledTheme as="li">
             <span>{level}</span> <p>{LangContextx.Level}</p>

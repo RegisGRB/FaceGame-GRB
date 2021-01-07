@@ -33,7 +33,6 @@ const FaceFill = ({
 
       for (let y = 1; y <= item - 1; y++) {
         do {
-          // pour chaque element qu'on genere de 1 a 30 on verif si on la deja generé si il y est on re genere ainsi de suite
           x = helpers.getrandomInt(maxItems);
         } while (inArray.includes(x));
 

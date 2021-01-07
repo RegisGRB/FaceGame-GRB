@@ -1,16 +1,16 @@
 const Mode = {
-  God: {
-    item: 3,
-    itemAdd:2,
+  FAST: {
+    item: 1,
+    itemAdd:4,
     CountdownTime: 1,
     CountdownAdd: 0,
     ImageType: "x",
   },
   Movies: {
-    item: 4,
+    item: 3,
     itemAdd:1,
-    CountdownTime: 0.2,
-    CountdownAdd: 0.2,
+    CountdownTime: 0.5,
+    CountdownAdd: 0.1,
     ImageType: "movies",
   },
   ReverseMovies: {

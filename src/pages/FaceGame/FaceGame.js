@@ -23,6 +23,7 @@ const FaceGame = ({ children, ...props }) => {
 
   const StartGame = () => {
     setlevel(1);
+    setSettings(ModeSelected);
     setfakeElement(GetFakeElement());
   };
 
@@ -45,31 +46,26 @@ const FaceGame = ({ children, ...props }) => {
 
   const WinAction = React.useCallback(() => {
     if (refHideElement.current.id === "sus") {
-      if (item === maxItems || item === 0 ) {
+      if ((item === maxItems && CountdownAdd > 0) || (item === 0 && CountdownAdd < 0)) {
         alert("YOU BEAT FACEGAME");
         setfakeElement(null);
       } else {
         setlevel(level + 1);
-        setitem(item + itemAdd);
-        setCountdownTime(
-          Number(
-            (Math.round((CountdownTime + CountdownAdd) * 100) / 100).toFixed(2)
-          )
-        );
+        setitem(itemAdd + item);
+        setCountdownTime(Number((Math.round((CountdownAdd + CountdownTime) * 100) / 100).toFixed(2)));
         setfakeElement(GetFakeElement());
       }
     }
-  }, [level, item, CountdownTime, CountdownAdd, refHideElement, maxItems,itemAdd,GetFakeElement]);
+  }, [level,item,CountdownTime,CountdownAdd,refHideElement,maxItems,itemAdd,GetFakeElement,]);
 
   const loseAction = () => {
     if (refHideElement.current.id === "sus") {
-      if(ModeSelected === "Ranked"){
-      seHighscore([
-        ...Highscore,
-        (level + item - (CountdownAdd + CountdownTime)) * 1000,
-      ]);
-      localStorage.setItem("Highscore", Highscore);
-    }
+      if (ModeSelected === "Ranked") {
+        seHighscore([...Highscore,item
+          // (level + item - (CountdownAdd + CountdownTime)) * 1000,
+        ]);
+        localStorage.setItem("Highscore", Highscore);
+      }
       setfakeElement(null);
     }
   };
