@@ -9,14 +9,6 @@ const routes = [
     component: Pages.FaceGame,
     },
     {
-      path: "/Home",
-      component: Pages.Home,
-    },
-    {
-      path: "/SignIn",
-      component: Pages.SignIn,
-    },
-    {
       path: "/FaceGame",
       component: Pages.FaceGame,
     }

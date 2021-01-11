@@ -3,17 +3,16 @@ import React, { useEffect, useState } from "react";
 import { LangContext } from "../../../context";
 const PwaInstall = ({ className }) => {
   const LangContextx = React.useContext(LangContext);
-  const [supportsPWA, setSupportsPWA] = useState();
+  const [supportsPWA, setSupportsPWA] = useState(
+    !(
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone ||
+      document.referrer.includes("android-app://")
+    )
+  );
   let deferredPrompt;
 
   useEffect(() => {
-    setSupportsPWA(
-      !(
-        window.matchMedia("(display-mode: standalone)").matches ||
-        window.navigator.standalone ||
-        document.referrer.includes("android-app://")
-      )
-    );
     window.addEventListener("beforeinstallprompt", (e) => {
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
